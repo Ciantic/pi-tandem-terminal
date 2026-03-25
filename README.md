@@ -15,7 +15,7 @@ However you can start it dangerously without containers like this:
 pi --no-tools --extension "$HOME/path-to-the/pi-tandem-terminal"
 ```
 
-Then if you want to see the session in action as you prompt the pi, you can run the example script:
+Then if you want to see the session in action as you prompt the pi, you can run in another terminal window:
 
 ```bash
 screen -R -S pi-bash
