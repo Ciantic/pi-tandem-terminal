@@ -27,7 +27,7 @@ export default function (pi: ExtensionAPI) {
 
   pi.on("before_agent_start", async (e, ctx) => {
     return {
-      systemPrompt: `You are a helpful assistant with access to an interactive terminal session. Be concise, and use the available tools to achive the goal user sets for you.`,
+      systemPrompt: `You are a helpful assistant with access to an interactive terminal session. Be concise, and use the available tools to achieve the goal the user sets for you.`,
     };
   });
 
