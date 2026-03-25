@@ -25,14 +25,11 @@ export default function (pi: ExtensionAPI) {
     sessionName: "pi-bash",
   });
 
-  // pi.on("before_agent_start", async (e, ctx) => {
-  //   return {
-  //     systemPrompt:
-  //       ``,
-  //   };
-  // });
-
-  // pi.on("session_start", async (e, ctx) => {});
+  pi.on("before_agent_start", async (e, ctx) => {
+    return {
+      systemPrompt: `You are a helpful assistant with access to an interactive terminal session. Be concise, and use the available tools to achive the goal user sets for you.`,
+    };
+  });
 
   async function getTerminalOutputContext(
     signal?: AbortSignal,
@@ -120,11 +117,11 @@ export default function (pi: ExtensionAPI) {
     name: "send-keys-to-terminal",
     promptSnippet:
       "Send keys to the open interactive terminal session, this advances the terminal cursor by the keys you send.",
-    promptGuidelines: [
-      "Examples:",
-      "send-keys-to-terminal ^M - sends an Enter keystroke",
-      "send-keys-to-terminal ^C - sends Ctrl+C to e.g. stop a running process",
-    ],
+    // promptGuidelines: [
+    //   "Examples:",
+    //   "send-keys-to-terminal ^M - sends an Enter keystroke",
+    //   "send-keys-to-terminal ^C - sends Ctrl+C to e.g. stop a running process",
+    // ],
     description:
       "Send keys to terminal session, returns terminal output after sending the keys.",
     label: "Send keys to terminal session",
