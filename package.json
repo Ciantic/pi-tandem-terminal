@@ -1,0 +1,39 @@
+{
+  "name": "pi-tandem-terminal",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.22.0",
+  "dependencies": {
+    "@mariozechner/pi-agent-core": "^0.61.0",
+    "@mariozechner/pi-ai": "^0.61.0",
+    "@mariozechner/pi-coding-agent": "^0.61.0",
+    "@mariozechner/pi-tui": "^0.62.0",
+    "@sinclair/typebox": "^0.34.48",
+    "@xterm/addon-serialize": "^0.14.0",
+    "@xterm/headless": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "prettier": "^3.8.1",
+    "vitest": "^4.1.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@sinclair/typebox": "^0.34.48",
+      "@aws-sdk/client-bedrock-runtime": "npm:null-package@1.0.0"
+    }
+  }
+}
